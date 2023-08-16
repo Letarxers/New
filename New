@@ -1,0 +1,189 @@
+-- Letraxer's Hub
+
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+
+local Window = OrionLib:MakeWindow({Name = "~ DevLetraxer's Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+
+-- Player TAB
+
+local PlayerTab = Window:MakeTab({
+ Name = "~ Player",
+ Icon = "rbxassetid://4483345998",
+ PremiumOnly = false
+})
+
+local Section = PlayerTab:AddSection({
+ Name = "~ Humanoid"
+})
+-- WalkSpeed
+PlayerTab:AddSlider({
+ Name = "~ Walkspeed",
+ Min = 1,
+ Max = 250,
+ Default = 16,
+ Color = Color3.fromRGB(255,255,255),
+ Increment = 1,
+ ValueName = "~ WalkSpeed Value",
+ Callback = function(Value)
+  game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+ end    
+})
+-- JumpPower 
+PlayerTab:AddSlider({
+ Name = "~ JumpPower",
+ Min = 1,
+ Max = 250,
+ Default = 50,
+ Color = Color3.fromRGB(255,255,255),
+ Increment = 1,
+ ValueName = "~ JumpPower Value",
+ Callback = function(Value)
+  game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+ end    
+})
+-- HipHeight
+PlayerTab:AddSlider({
+    Name = "~ HipHeight",
+    Min = 1,
+    Max = 50,
+    Default = 2,
+    Color = Color3.fromRGB(255,255,255),
+    Increment = 1,
+    ValueName = "~ HipHeight Value",
+    Callback = function(Value)
+     game.Players.LocalPlayer.Character.Humanoid.HipHeight = Value
+    end    
+   })
+   -- Health
+PlayerTab:AddSlider({
+    Name = "~ Health",
+    Min = 0,
+    Max = 100,
+    Default = 100,
+    Color = Color3.fromRGB(255,255,255),
+    Increment = 1,
+    ValueName = "~ Health Value",
+    Callback = function(Value)
+     game.Players.LocalPlayer.Character.Humanoid.Health = Value
+    end    
+   })
+
+PlayerTab:AddButton({
+    Name = "~ Sit",
+    Callback = function()
+        local humanoid = game.Players.LocalPlayer.Character.Humanoid
+        if humanoid.Sit then
+            humanoid.Sit = false
+        else
+            humanoid.Sit = true
+        end
+    end    
+})
+
+-- Script's 
+
+local ScriptsTab = Window:MakeTab({
+ Name = "~ Script's",
+ Icon = "rbxassetid://4483345998",
+ PremiumOnly = false
+})
+
+local Section = ScriptsTab:AddSection({
+ Name = "~ Script's"
+})
+
+
+ScriptsTab:AddButton({
+ Name = "~ Walk Wall",
+ Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/artas01/artas01/main/walkonwall_imnotscriptdeveloper"))()   end    
+})
+
+ScriptsTab:AddButton({
+    Name = "~ R15 > R6 Animations",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Imagnir/r6_anims_for_r15/main/r6_anims.lua", true))() end
+    })
+
+-- Admins
+
+local AdminTab = Window:MakeTab({
+    Name = "~ Admin's",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+   })
+   
+   local Section = AdminTab:AddSection({
+    Name = "~ Admin's"
+   })
+   
+   
+   AdminTab:AddButton({
+    Name = "~ CMD-X",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source"))() end
+     })
+   
+     AdminTab:AddButton({
+        Name = "~ Orca",
+        Callback = function()
+            loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/richie0866/orca/master/public/snapshot.lua"))() end
+        })
+        AdminTab:AddButton({
+            Name = "~ IY FE",
+            Callback = function()
+                loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))() end
+            })
+
+       
+-- Hub's
+
+local HubTab = Window:MakeTab({
+    Name = "~ Hub's",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+   })
+   
+   local Section = HubTab:AddSection({
+    Name = "~ Hub's"
+   })
+   
+   
+   HubTab:AddButton({
+    Name = "~ Holf Hub",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Podroka626/Scripts/main/Universal"))() end
+     })
+
+     HubTab:AddButton({
+        Name = "~ Tibe Hub Ver1.8",
+        Callback = function()
+            loadstring(game:HttpGet('https://pastebin.com/raw/2pTYrasx'))() end
+         
+                 })
+
+
+
+-- For Games 
+
+local HubTab = Window:MakeTab({
+    Name = "~ For Game's",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+   })
+   
+   local Section = HubTab:AddSection({
+    Name = "~ BrookHaven"
+   })
+   
+   
+   HubTab:AddButton({
+    Name = "~ Ice Hub",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/IceMael7/NewIceHub/main/Brookhaven"))() end
+         })  
+         
+         
+         OrionLib:Init()
